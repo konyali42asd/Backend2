@@ -7,6 +7,10 @@ namespace Core.Spacitifition
 {
     public class BaseISpecifition<T> : ISpecifition<T>
     {
+        public BaseISpecifition()
+        {
+
+        }
         public BaseISpecifition(Expression<Func<T,bool>> criteria)
         {
             Critera = criteria;

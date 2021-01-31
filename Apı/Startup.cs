@@ -1,3 +1,5 @@
+using Apý.Helpers;
+using AutoMapper;
 using Core.Interface;
 using Data.EfContexts;
 using Infrastructure.Implements;
@@ -30,6 +32,7 @@ namespace Core.Migrations
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
